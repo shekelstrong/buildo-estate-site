@@ -1,79 +1,32 @@
-# Buildo Недвижимость — Сайт
+# Buildo Estate
 
-> **Виртуальный хоум-стейджинг для Авито и ЦИАН**
+> AI-аналитика рынка + персональный shortlist объявлений
 
-Часть экосистемы **Buildo** (https://buildo.ru). MIT licensed. Open source.
-
-![Buildo](https://img.shields.io/badge/Buildo-ecosystem-5B8DEF?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
-
----
+Один из 6 продуктов экосистемы **Buildo** — ИИ-агентов для бизнеса.
 
 ## Что это
 
-Маркетинговый сайт продукта Недвижимость. Лендинг + SEO блог + кейсы. Buildo.ru зонтик.
-
-**Сценарий использования (Сайт):** Лендинг с примерами до/после, кейсы
-
----
-
-## Архитектура
-
-```
-Buildo Недвижимость экосистема
-├── shekelstrong/buildo-estate-tg          ← этот репо (Telegram-бот)
-├── shekelstrong/buildo-estate-miniapp    ← Mini App
-└── shekelstrong/buildo-estate-site        ← Маркетинговый сайт
-```
-
----
+AI-подбор недвижимости — это ai-аналитика рынка + персональный shortlist объявлений.
 
 ## Стек
 
-| Слой | Технология |
-|---|---|
-| Bot | aiogram 3.x + Redis FSM + Docker |
-| Frontend | Vite + React 19 + Tailwind + Telegram WebApp SDK |
-| Backend | FastAPI + YandexART (inpainting) + ЮKassa |
-| AI (image) | YandexART (inpainting для замены мебели) |
-| AI (text) | MiniMax M3 (описания объявлений) |
-| Deploy | Layero / Vercel (manual deploy by user) |
+- **Next.js 14** + React 18
+- **TypeScript 5.7**
+- **Tailwind CSS 3.4**
+- **Brand color:** `#EF4444`
 
----
+## Локальная разработка
 
-## Монетизация
-
-1490 ₽ за 10 фото / 3990 ₽ за 30 фото (3 стиля)
-
-**Целевая аудитория:** Риелторы, владельцы квартир, застройщики
-**Конкуренты (РФ):** Virtual Staging AI (не в РФ), BoxBrownie (не в РФ), ручная 30-100к
-
----
+```bash
+npm install
+npm run dev
+# → http://localhost:3000
+```
 
 ## Деплой
 
-```bash
-cp .env.example .env
-# заполни: TELEGRAM_BOT_TOKEN, OPENROUTER_API_KEY, YOOKASSA_*
-docker compose up --build
-```
+Платформа: **Layero** (auto-deploy из main).
 
-Продакшен:
-```bash
-git push origin main  # GitHub Actions → SSH → VPS → docker compose up -d --build
-```
+## Лицензия
 
----
-
-## Связанные репо
-
-- [buildo-estate-tg](https://github.com/shekelstrong/buildo-estate-tg) — этот репо
-- [buildo-estate-miniapp](https://github.com/shekelstrong/buildo-estate-miniapp)
-- [buildo-estate-site](https://github.com/shekelstrong/buildo-estate-site)
-- [nemo-team-docs/projects/buildo/estate/](https://github.com/shekelstrong/nemo-team-docs/tree/main/projects/buildo/estate) — спецификация
-
----
-
-## License
-
-MIT (c) 2026 Buildo Ecosystem. Inspired by [awesome-generative-ai-apps](https://github.com/Anil-matcha/awesome-generative-ai-apps).
+MIT © 2026 Buildo
